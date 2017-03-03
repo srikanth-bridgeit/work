@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML Frames</title>
+<style media="screen">
+.body {
+background-color: grey;
+margin:80px 80px 100px 100px;
+}
+div.fixedheader {
+text-align: center;
+position:fixed;
+top:0px;
+left:0px;
+width:100%;
+height: 5%;
+color:#CCC;
+background:#333;
+padding:20px;
+}
+
+div.fixedfooter {
+	position:fixed;
+	bottom:0px;
+	left:0px;
+	width:100%;
+  height: 10;
+	color:#CCC;
+	background:#333;
+	padding:8px;
+  text-align: right;
+}
+
+</style>
+</head>
+<frameset cols="30,70">
+
+   <frame name="left" src="/home/bridgeit/Desktop/srikanth/navigationbar.html" />
+   <frame name="" />
+
+
+   <body class="body">
+     <div class="fixedheader"> <h1>M.SRIKANTH</h1> </div>
+      <div class="fixedfooter"> modugusrikanth1@gmail.com</div>
+   </body>
+
+</frameset>
+</html>
