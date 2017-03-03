@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Store and retreive data from local storage.</h2>
+
+<p id="demo"></p>
+
+<script>
+var myJSON;
+
+//Storing data:
+var books = { "Pascal" : [
+   { "Name"  : "Pascal Made Simple", "price" : 700 },{ "Name"  : "Scala for the Impatient", "price" : 1000 },
+   { "Name"  : "Scala in Depth", "price" : 1300 },
+   { "Name"  : "Guide to Pascal", "price" : 400 }],
+
+   "Scala"  : [
+      { "Name"  : "Scala for the Impatient", "price" : 1000 },
+      { "Name"  : "Scala in Depth", "price" : 1300 },{ "Name"  : "Pascal Made Simple", "price" : 700 },  { "Name"  : "Guide to Pascal", "price" : 400 }]
+};
+myJSON = JSON.stringify(books);
+localStorage.setItem("testJSON", myJSON);
+
+/*//Retrieving data:
+text = localStorage.getItem("testJSON");
+obj = JSON.parse(text);
+document.getElementById("demo").innerHTML =obj;*/
+</script>
+
+</body>
+</html>

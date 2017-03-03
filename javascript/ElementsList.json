@@ -1,0 +1,122 @@
+{
+   "elements":
+      {
+         "books":[
+            {
+               "id1":1,
+               "name":"DcMotors",
+               "author":"B.L.Tereja",
+               "price":"1500"
+            },
+            {
+               "id1":2,
+               "name":"AcMotors",
+               "author":"Bakshi",
+               "price":"1800"
+            },
+            {
+               "id1":3,
+               "name":"PowerSystems",
+               "author":"RamaKrishna",
+               "price":"900"
+            },
+            {
+               "id1":4,
+               "name":"HvTransmission",
+               "author":"V.k.Mehatha",
+               "price":"1000"
+            },
+            {
+               "id1":5,
+               "name":"java",
+               "author":"herbetschildt",
+               "price":"950"
+            },
+            {
+               "id1":6,
+               "name":"Scala for the Impatient",
+               "author":"herbetschildt",
+               "price":"950"
+            },
+            {
+               "id1":7,
+               "name":"Scala in Depth",
+               "author":"V.k.Mehatha",
+               "price":"1200"
+            },
+            {
+               "id1":8,
+               "name":"22 Days in India",
+               "author":"Anurag Mathur",
+               "price":"500"
+            },
+            {
+               "id1":9,
+               "name":"A Pair of Blue Eyes",
+               "author":"Thomash Hardy",
+               "price":"990"
+            },
+            {
+               "id1":10,
+               "name":"A New World",
+               "author":"Amit Chaudhuri",
+               "price":"650"
+            }
+         ]
+      },
+
+         "phones":[
+            {
+               "id1":1,
+               "name":"asus",
+               "cost":"12000"
+            },
+            {
+               "id1":2,
+               "name":"Oppo",
+               "cost":"18000"
+            },
+            {
+               "id1":3,
+               "name":"LeMax",
+               "cost":"15500"
+            },
+            {
+               "id1":4,
+               "name":"Vivo V3",
+               "cost":"13000"
+            },
+            {
+               "id1":5,
+               "name":"Nokia",
+               "cost":"17000"
+            },
+            {
+               "id1":6,
+               "name":"Samsung",
+               "cost":"21000"
+            },
+            {
+               "id1":7,
+               "name":"Lava",
+               "cost":"10000"
+            },
+            {
+               "id1":8,
+               "name":"Micromax",
+               "cost":"7500"
+            },
+            {
+               "id1":9,
+               "name":"I-Phone",
+               "cost":"70000"
+            },
+            {
+               "id1":10,
+               "name":"Vivo V5",
+               "cost":"18000"
+            }
+         ]
+
+     
+}

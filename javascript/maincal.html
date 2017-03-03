@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+function myFunction() {
+  var res=x;
+var separators = [' ', '\\\+', '-', '\\\(', '\\\)', '\\*', '/', ':', '\\\?'];
+
+var tokens = x.split(new RegExp(separators.join('|'), 'g'));
+
+    document.getElementById("demo").innerHTML = tokens;
+    var value=parseFloat(tokens[0]);
+      document.getElementById("demo1").innerHTML = typeof value;
+
+    for(var i=0;i<=5;i++)
+    {
+
+       res = res.replace(tokens[i],"");
+
+      if(res.charAt(0)=='+')
+      {
+
+          value= value+parseFloat(tokens[i+1]);
+         res = res.replace("+","");
+      }
+      if(res.charAt(0)=='-')
+      {
+
+          value= value-parseFloat(tokens[i+1]);
+         res = res.replace("-","");
+      }
+      if(res.charAt(0)=='/')
+      {
+
+          value= value/parseFloat(tokens[i+1]);
+         res = res.replace("/","");
+      }
+      if(res.charAt(0)=='*')
+      {
+
+          value= value*parseFloat(tokens[i+1]);
+         res = res.replace("*","");
+      }
+
+
+    }
+  document.getElementById("demo2").innerHTML = value;
+
+}
+
+</script>
+
+</body>
+</html>

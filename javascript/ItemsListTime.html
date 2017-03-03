@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>Digital Clock</title>
+<style>
+#clock{
+	color:#F0F;
+}
+
+</style>
+</head>
+<body>
+<script>
+function digclock2()
+{
+	var d = new Date()
+	var t = d.toLocaleTimeString()
+
+	document.getElementById("clock").innerHTML = t
+}
+
+setInterval(function(){digclock2()},1)
+
+
+</script>
+
+<body>
+	<p id="demo"></p>
+	<p id="demo1"></p>
+	<script>
+function myData(){
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	        myObj = JSON.parse(this.responseText);
+
+
+	var  i =  Math.floor(Math.random() * 10) ;
+
+	   document.getElementById("demo").innerHTML="Id : "+myObj.elements.books[i].id1+"<br/>"+"Name : "
+	    +myObj.elements.books[i].name+"<br/>"+"Author : "+myObj.elements.books[i].author+
+	    "<br/>"+"Price : "+myObj.elements.books[i].price+"<br />"+"<br />";
+
+
+	    }
+	};
+	xmlhttp.open("GET", "/home/bridgeit/Desktop/srikanth/javascript/ElementsList.json", true);
+	xmlhttp.send();
+}
+setInterval(function(){myData()},1000)
+
+	</script>
+	<!--<script>
+function myData1(){
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	        myObj = JSON.parse(this.responseText);
+
+
+	var  i =  Math.floor(Math.random() * 10) ;
+
+	document.getElementById("demo1").innerHTML="Id : "+myObj.elements.phones[i].id1+"<br/>"+"Name : "+
+	myObj.elements.phones[i].name+"<br/>"+ "<br/>"+"cost : "+myObj.elements.phones[i].cost+"<br />"+"<br />";
+
+
+	    }
+	};
+	xmlhttp.open("GET", "/home/bridgeit/Desktop/srikanth/javascript/ElementsList.json", true);
+	xmlhttp.send();
+}
+setInterval(function(){myData1()},1000)
+</script>-->
+Digital Clock
+<div id="clock">
+	</div>
+</body>
+</html>

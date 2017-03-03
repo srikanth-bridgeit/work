@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>calculater</title>
+    <style media="screen">
+    div {
+      background-image: url("bg1.jpeg");
+
+  background-color: black;
+  width: 300px;
+  height: 250px;
+  border: 1px solid black;
+      margin-top: 80px;
+      margin-bottom: 80px;
+      margin-right: 10%;
+      margin-left: 20%;
+      padding-top: 50px;
+   padding-right: 40px;
+   padding-bottom: 50px;
+   padding-left: 80px;
+
+  }
+  body {
+    background-image: url("index1.jpeg");
+}
+
+
+    </style>
+  </head>
+  <body >
+<div class="display"  >
+
+  <form  id="myForm" >
+  <input type="button"  value="1" onclick="ans.value+='1'">
+  <input type="button"  value="2" onclick="ans.value+='2'">
+  <input type="button"  value="3" onclick="ans.value+='3'"><br/>
+  <input type="button"  value="4" onclick="ans.value+='4'">
+  <input type="button"  value="5" onclick="ans.value+='5'">
+  <input type="button"  value="6" onclick="ans.value+='6'"><br/>
+  <input type="button"  value="7" onclick="ans.value+='7'">
+  <input type="button"  value="8" onclick="ans.value+='8'">
+  <input type="button"  value="9" onclick="ans.value+='9'"><br/>
+  <input type="button"  value="0" onclick="ans.value+='0'">
+  <input type="button"  value="+" onclick="ans.value+='+'">
+  <input type="button"  value="-" onclick="ans.value+='-'"><br/>
+  <input type="button"  value="*" onclick="ans.value+='*'">
+  <input type="button"  value="/" onclick="ans.value+='/'">
+  <input type="button"  value="." onclick="ans.value+='.'">
+    <input type="text" name="ans" ><br>
+  <p><input type="button"  value="clear" onclick="ans.value=''"></p>
+
+</form>
+<button onclick="myFunction()">Ans</button>
+<script>
+var x;
+function myFunction() {
+     x = document.getElementById("myForm").elements.namedItem("ans").value;
+ document.getElementById("myForm").elements.namedItem("ans").value= myCalculator(x);
+}
+
+function myCalculator(x)
+{
+var res=x;
+var separators = [' ', '\\\+', '-', '\\\(', '\\\)', '\\*', '/', ':', '\\\?'];
+
+var tokens = x.split(new RegExp(separators.join('|'), 'g'));
+
+  //document.getElementById("demo").innerHTML = tokens;
+  var value=parseFloat(tokens[0]);
+  //  document.getElementById("demo1").innerHTML = typeof value;
+
+  for(var i=0;i<=tokens.length;i++)
+  {
+
+     res = res.replace(tokens[i],"");
+
+    if(res.charAt(0)=='+')
+    {
+
+        value= value+parseFloat(tokens[i+1]);
+       res = res.replace("+","");
+    }
+    if(res.charAt(0)=='-')
+    {
+
+        value= value-parseFloat(tokens[i+1]);
+       res = res.replace("-","");
+    }
+    if(res.charAt(0)=='/')
+    {
+
+        value= value/parseFloat(tokens[i+1]);
+       res = res.replace("/","");
+    }
+    if(res.charAt(0)=='*')
+    {
+
+        value= value*parseFloat(tokens[i+1]);
+       res = res.replace("*","");
+    }
+
+  }
+  if(isNaN(value))
+  {
+    return "syntax Error..!";
+  }
+  else
+    {
+      return value;
+    }
+
+//document.getElementById("myForm").elements.namedItem("ans").value= value;
+
+}
+
+</script>
+
+</div>
+  </body>
+</html>

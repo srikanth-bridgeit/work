@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <form  id="myForm" >
+    <input type="button"  value="1" onclick="ans.value+='1'">
+    <input type="button"  value="2" onclick="ans.value+='2'">
+    <input type="button"  value="3" onclick="ans.value+='3'"><br/>
+    <input type="button"  value="4" onclick="ans.value+='4'">
+    <input type="button"  value="5" onclick="ans.value+='5'">
+    <input type="button"  value="6" onclick="ans.value+='6'"><br/>
+    <input type="button"  value="7" onclick="ans.value+='7'">
+    <input type="button"  value="8" onclick="ans.value+='8'">
+    <input type="button"  value="9" onclick="ans.value+='9'"><br/>
+    <input type="button"  value="0" onclick="ans.value+='0'">
+    <input type="button"  value="+" onclick="ans.value+='+'">
+    <input type="button"  value="-" onclick="ans.value+='-'">
+    <input type="button"  value="*" onclick="ans.value+='*'"><br/>
+    <input type="button"  value="/" onclick="ans.value+='/'">
+    <input type="button"  value="." onclick="ans.value+='.'">
+    <input type="button"  value="clear" onclick="ans.value=''"><br/>
+    <input type="text" name="ans" ><br>
+
+
+</form>
+<p>Click the "Try it" button to display the value of the element in the form.</p>
+
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+<button onclick="myCalculator(x)">Try it</button>
+<p id="demo1"></p>
+<script>
+var x;
+function myFunction() {
+       x = document.getElementById("myForm").elements.namedItem("ans").value;
+  document.getElementById("demo").innerHTML = myCalculator(x);
+}
+
+function myCalculator(x)
+{
+  var res=x;
+var separators = [' ', '\\\+', '-', '\\\(', '\\\)', '\\*', '/', ':', '\\\?'];
+
+var tokens = x.split(new RegExp(separators.join('|'), 'g'));
+
+    document.getElementById("demo").innerHTML = tokens;
+    var value=parseFloat(tokens[0]);
+      document.getElementById("demo1").innerHTML = typeof value;
+
+    for(var i=0;i<=tokens.length;i++)
+    {
+
+       res = res.replace(tokens[i],"");
+
+      if(res.charAt(0)=='+')
+      {
+
+          value= value+parseFloat(tokens[i+1]);
+         res = res.replace("+","");
+      }
+      if(res.charAt(0)=='-')
+      {
+
+          value= value-parseFloat(tokens[i+1]);
+         res = res.replace("-","");
+      }
+      if(res.charAt(0)=='/')
+      {
+
+          value= value/parseFloat(tokens[i+1]);
+         res = res.replace("/","");
+      }
+      if(res.charAt(0)=='*')
+      {
+
+          value= value*parseFloat(tokens[i+1]);
+         res = res.replace("*","");
+      }
+
+
+    }
+  document.getElementById("demo1").innerHTML = value;
+
+}
+
+</script>
+  </body>
+</html>
